@@ -22,7 +22,8 @@ for dirpath, dirnames, files in walk(top_dir):
             except:
                 pass
             # Execute guetzli
-            call(['guetzli', url, url_out])
+            call(['guetzli', '--quality 90', url, url_out]) 
+            # Added "--quality 90" as per https://github.com/google/guetzli for better compression
             # Print your have saved
             size_source = path.getsize(url)
             try:
